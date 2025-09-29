@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+void countfreq(int arr[],int n){
+unordered_map<int,int>mp;
+for(int i=0;i<n;i++){
+    mp[arr[i]]++;}
+    int maxfreq=0, maxele=0;
+    int minfreq=n+1,minele=0;
+    for(auto it:mp){
+        int element=it.first;
+        int count=it.second;
+        if(maxfreq<count){
+            maxele=element;
+            maxfreq=count;
+        }
+        if(minfreq>count){
+            minele=element;
+            minfreq=count;
+        }
+        
+    }
+ cout<<minele<<"="<<minfreq<<endl;
+ cout<<maxele<<"="<<maxfreq<<endl;
+
+}
+int main() {
+	// your code goes here
+	int arr[]={10,10,15,5,7,8};
+	int n=sizeof(arr)/sizeof(arr[0]);
+	
+	countfreq(arr,n);
+
+}
