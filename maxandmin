@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void countfreq(int n,int arr[]){
+    vector<bool>visited(n,false);
+    for(int i=0;i<n;i++){
+        int maxfreq=0, minfreq=0;
+        int maxele=0 ,minele=0;
+        
+        int count=1;
+        for(int j=i+1;j<n;j++){
+            
+            if(visited[i]==true){
+                continue;
+            }
+        
+        if(arr[i]==arr[j]){
+            visted[i]=true;
+            count++; }
+            if(count>maxfreq){
+                maxfreq=count;
+                maxele=arr[i];
+            }
+        if(count<minfreq){
+            minfreq=count;
+            maxele=arr[i]
+            
+        }
+        
+        
+        }
+       
+    }
+    count<<"the max elemment with highest freq is"<<maxele<<"->"<<maxfeq<<endl;
+    cout<<"the min element with lowest freq is "<<minele<<"->"<<minfreq<<endl;
+}
+
+int main() {
+int arr[]={2,4,5,6,2,5,6,4,5,6,2,4};
+int n=sizeof(arr[])/sizeof(arr[0]);
+countfreq(n,arr);
+return 0;
+
+
+}
