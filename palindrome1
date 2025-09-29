@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#include<iostream>
+using namespace std;
+bool palindromecheck (string s){
+int left =0;
+int right=s.size-1;
+while(left<right){
+        if(!isalnum=s[left]){
+       left++;
+        }
+        else if(!isalnum=s[right]){
+            right++;
+
+        }
+        else if(tolower[left]!=tolower[right]){
+            return false;
+        }
+        else{
+            left++;
+            right--;
+        }
+    return true;
+        
+    }}
+
+
+
+
+   
+
+int main() {
+    Solution obj;
+    string s = "A man, a plan, a canal: Panama";
+    cout << (obj.palindromeCheck(s) ? "true" : "false");
+}
