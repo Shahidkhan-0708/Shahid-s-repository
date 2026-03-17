@@ -1,25 +1,18 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        stack<string>st;
-        string str="";
-        for(int i=0;i<s.size();i++){
-            if(s[i]==' '){
-                if(!str.empty()){
-                   st.push(str);
-
-                }
-                str="";
-
-            }
-            else{
-                str+=s[i];
-            }
+        int res=0;
+    for(int i=s.size()-1;i>=0;i--){
+        if(s[i]==' '){
+          if(res){
+            break;
+          }
+          else{
+            continue;
+          }
         }
-        if(!str.empty()){
-            st.push(str);
-        }
-        str=st.top();
-  return str.size();
+        res++;
+    }
+    return res;
     }
 };
